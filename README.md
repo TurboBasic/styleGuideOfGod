@@ -1,2 +1,2 @@
 # styleGuideOfGod
-want to create style guide God would use if He was a front-end developer
+style guide God would use if He was a front-end developer
