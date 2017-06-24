@@ -1,21 +1,39 @@
 styleGuideOfGod
 ==================
-style guide God would use if He was a front-end developer
+![hexagram of wisdom](https://gist.githubusercontent.com/TurboBasic/9dfd228781a46c7b7076ec56bc40d5ab/raw/03942052ba28c4dc483efcd0ebf4bfc6809ed0d0/hexagram3D.png) 
 
-TLDR;
+__the__ style guide God would use if He was a front-end developer
+
+TLDR statement
+-------------
+TLDR; &mdash; you have been warned
+
 
 Content of the document
 --------------------------
+
 ### 1. TLDR warning
+Any document worth reading should have it. 
+
 ### 2. Content section of the document %)
+
+
 #### 2.1. Content of Content section of document
 Some meaningful text 
+
 
 #### 2.2. Content of body of document
 Another meaningful text 
 
+
 ### 3. Body of document 
 The last piece of meaningful text 
+
+
+
+Body of document starts here
+---------------------------
+Congratulations &mdash; you have started reading this piece of technical art!  You have earned about `120` bytes of intelligence so far &mdash; just go forth.
 
 
 
