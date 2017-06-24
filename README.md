@@ -44,8 +44,8 @@ The last piece of meaningful text
 
 
 
-Body of document starts here
----------------------------
+## Body of document starts here
+--------------------------------
 Congratulations &mdash; you have started reading this piece of technical art!  You have earned about `120` bytes of intelligence so far &mdash; just go forth.
 
 
