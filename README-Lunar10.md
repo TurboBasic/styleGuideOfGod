@@ -57,12 +57,12 @@ Unless explicitly stated opposite this book uses lunar decimal numeral system.
 :3:.:14159265358979::32384626433832:
 
 ####           Dates
-:0::9:.:11:.:1885: &nbsp;$mdash; 09.11.1885, birthday of [Velimir Khlebnikov](https://en.wikipedia.org/wiki/Velimir_Khlebnikov)
+:0::9:.:11:.:1885: &nbsp;&mdash; 09.11.1885, birthday of [Velimir Khlebnikov](https://en.wikipedia.org/wiki/Velimir_Khlebnikov)
 
 ----
 
 ####           30x30 moonsquare
-:0: &nbsp;:1234567890123: :4567890123456789:<br>
+:0: :1234567890123: :4567890123456789:<br>
 :12345678901234: :5678901234567890:<br>
 :23456789012345: :6789012345678901:<br>
 :34567890123456: :7890123456789012:<br>
@@ -72,7 +72,7 @@ Unless explicitly stated opposite this book uses lunar decimal numeral system.
 :78901234567890: :1234567890123456:<br>
 :89012345678901: :2345678901234567:<br>
 :90123456789012: :3456789012345678:<br>
-:0: &nbsp;:1234567890123: :4567890123456789:<br>
+:0: :1234567890123: :4567890123456789:<br>
 :12345678901234: :5678901234567890:<br>
 :23456789012345: :6789012345678901:<br>
 :34567890123456: :7890123456789012:<br>
@@ -82,7 +82,7 @@ Unless explicitly stated opposite this book uses lunar decimal numeral system.
 :78901234567890: :1234567890123456:<br>
 :89012345678901: :2345678901234567:<br>
 :90123456789012: :3456789012345678:<br>
-:0: &nbsp;:1234567890123: :4567890123456789:<br>
+:0: :1234567890123: :4567890123456789:<br>
 :12345678901234: :5678901234567890:<br>
 :23456789012345: :6789012345678901:<br>
 :34567890123456: :7890123456789012:<br>
@@ -101,7 +101,7 @@ The last piece of meaningful text
 
 
 # <br>     :3: Body of document starts here
-Congratulations &mdash; you have started reading this piece of technical art!  You have earned about `120` bytes of intelligence so far &mdash; just go forth. :full_moon_with_face: :full_moon:
+Congratulations &mdash; you have started reading this piece of technical art!  You have earned about `120` bytes of intelligence so far &mdash; just go forth.
 
 
 ## <br>    :3: Naming conventions
@@ -167,17 +167,17 @@ TODO unprocessed
 
 
 
-#### <br> :3: HTML Identifiers (`id`'s)
+#### <br>  :3: HTML Identifiers (`id`s)
 ```html
 <section id="id_Announcement">
 </section>
-````
+```
 
 
-### <br>  :2: CSS
+###  <br>  :3: CSS
 use BEM notation everywhere except of some isolated and documented cases according to best practices (TODO mention some)
 
-#### <br>  BEM blocks
+#### <br>  :3: BEM blocks
 ```css
 
   .PascalCaseAwesomeBlockName {
@@ -187,7 +187,7 @@ use BEM notation everywhere except of some isolated and documented cases accordi
       /* other incredibly awesome styling */
   }
 ```
-yet
+.
 
 #### <br> :3: BEM elements
 ```css
@@ -201,7 +201,7 @@ yet
   }
 ```
 
-#### <br> :2: BEM modifiers
+#### <br> :3: BEM modifiers
 ```css
 
   .Block--camelCaseModifier {
