@@ -7,9 +7,11 @@ __the__ style guide God would use if He was a front-end developer
 TLDR; &mdash; you have been warned :skull:
 
 #   <br>   :3: Acknowledgement and dedications
-This is dedicated to :snail: Katya and my kids Darya, George, Varvara and Cosmas
+This is dedicated to :snail: Katya, Darya, George, Varvara and Cosmas
 
-<p style="text-align: center; font-size: 10px;"> :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0: </p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<p align="center"> :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0: </p>
 
 -------
 
@@ -29,7 +31,7 @@ Any document worth reading must have one
 ### <br>   Content of body of document
 Some meaningful text
 
-<p style="text-align: center;"> :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0: </p>
+<p align="center"> :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0:&nbsp; :1:&nbsp; :2:&nbsp; :3:&nbsp; :5:&nbsp; :6:&nbsp; :7:&nbsp; :8:&nbsp; :0: </p>
 
 -------
 
@@ -54,14 +56,15 @@ Unless explicitly stated opposite this book uses lunar decimal numeral system.
 :2: + :2: = :4:
 
 ####           First 29 digits of &pi;
-:3:.:14159265358979::32384626433832:
+:3: . :14159265358979::32384626433832:
 
 ####           Dates
-:0::9:.:11:.:1885: &nbsp;&mdash; 09.11.1885, birthday of [Velimir Khlebnikov](https://en.wikipedia.org/wiki/Velimir_Khlebnikov)
+:0::9: . :1::1: . :1::8::8::5: &nbsp;&mdash; 09.11.1885, birthday of [Velimir Khlebnikov](https://en.wikipedia.org/wiki/Velimir_Khlebnikov)
 
 ----
 
 ####           30x30 moonsquare
+<p align="center">
 :0: :1234567890123: :4567890123456789:<br>
 :12345678901234: :5678901234567890:<br>
 :23456789012345: :6789012345678901:<br>
@@ -92,7 +95,7 @@ Unless explicitly stated opposite this book uses lunar decimal numeral system.
 :78901234567890: :1234567890123456:<br>
 :89012345678901: :2345678901234567:<br>
 :90123456789012: :3456789012345678:<br>
-
+</p>
 
 
 ## <br>    :3: Body of document
