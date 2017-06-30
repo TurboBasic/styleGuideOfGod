@@ -61,7 +61,7 @@
 
 New-Variable _moons -Scope script -Force
 
-    $script:_moons = @{
+    $_moons = @{
       0 = ':full_moon:'
       1 = ':waning_gibbous_moon:'
       2 = ':last_quarter_moon:'
@@ -82,81 +82,45 @@ New-Variable _moons -Scope script -Force
         measure -max -min | 
         %{ $script:minLength = $_.minimum
            $script:maxLength = $_.maximum }
-    Write-Verbose "Loaded!"
 
 #endregion
 
 
 
 Function Get-Moon {
-    PARAM([PARAMETER( Mandatory, Position=0 )]
-              [int]$n,
-          [PARAMETER( Position=1 )]
-              [string]$align='' 
-    )
-  
-  if($n -in 0..9) {
-    if($align.Length) { 
-      $filler = $align.Substring(0,1) * ($script:maxLength - $_moons.$n.length) 
-    } else {
-      $filler = ''
-    }
-    $_moons.$n + $filler
-  }
-} 
-
-
-
-Function Get-Lunar10 {
-
-  #region parameters
-    [OUTPUTTYPE([byte[]])]
+    [OUTPUTTYPE([string])]
     [CMDLETBINDING()] PARAM(
-        [PARAMETER( Mandatory,
-                    Position=0,
+        [PARAMETER( Mandatory, 
+                    Position=0, 
                     ValueFromPipeline )]
-                [decimal[]] 
-                $numbers,
-
-        [PARAMETER( Position=1 )]
-                [string] 
-                $align='',
-
-        [PARAMETER( Position=2 )]
-                [string] 
-                $delimiter = ''
+              [int[]] $numbers
     )
-  #endregion
 
-  #region body
-    BEGIN {}
+  BEGIN{}
 
-    PROCESS { 
-      $numbers | %{
-        $res = @()
-        $sign = $null
-        if($_ -lt 0) { $sign = '-' + $delimiter } 
+  PROCESS {    
+      if($numbers.length) {
+          [int]$n = $null 
 
-        $_ | toDecimalDigits | 
-          ?{ $_ -in 0..9 } | 
-          %{ $res += Get-Moon $_ $align }
-
-        [Array]::Reverse($res)
-        [string]($sign + ($res -join $delimiter))
+          foreach($n in $numbers) {
+              if( $n[0] -in 0..9 ) {
+                  $_moons[ $n[0] ] 
+              } elseif( [char]($n[0]) -in ([char]'0')..([char]'9') )  {
+                  $_moons[ [char]($n[0])  - [char]'0' ]     
+              }
+          }
       }
-    }
+  }
 
-    END {}
-  #endregion
-
-}
+  END{}
+} 
 
 
 
 Function ConvertTo-Lunar10 {
 
   #region parameters
-    [OUTPUTTYPE([byte[]])]
+    [OUTPUTTYPE([string[]])]
     [CMDLETBINDING()] PARAM(
         [PARAMETER( Mandatory,
                     Position=0,
@@ -166,8 +130,9 @@ Function ConvertTo-Lunar10 {
                 $strings,
 
         [PARAMETER( Position=1 )]
+            [ALLOWEMPTYSTRING()]
                 [string] 
-                $align='',
+                $align,
 
         [PARAMETER( Position=2 )]
                 [string] 
@@ -176,14 +141,30 @@ Function ConvertTo-Lunar10 {
   #endregion
 
 
-  #region body
-    BEGIN {}
 
-    PROCESS { 
-      $re = [regex]':[-+]?\d+:'
+  #region body                     
+    BEGIN {
+      $PATTERN_DELIMITER = ':'
+
+
+      $re = [regex]('{0}([-+]?)(\d+){0}' -f $PATTERN_DELIMITER)
+
       $callback = {
-        Get-Lunar10 ([string]$args[0]).TrimStart(':').TrimEnd(':') -align $align -delimiter $delimiter
+          [string]$res = ''
+          if( $args.Groups[1].Value.Length -eq 1 ) { 
+              $res += $args.Groups[1].Value 
+          }
+   
+          [char[]]$digits = $args.Groups[2].Value                  
+          $0..($digits.length-1) |
+              % {   $currentMoon = Get-Moon $digits[$_]  
+                    $res += $currentMoon  + [string]$align * ($maxLength - $currentMoon.length) 
+                }  
+          $res + $delimiter
       }
+    }
+
+    PROCESS {
       foreach($s in $strings) {
         $re.Replace($s, $callback)
       }
@@ -194,12 +175,15 @@ Function ConvertTo-Lunar10 {
 
 }
 
-New-Alias -name gL10  Get-Lunar10 -Force
+
+
+
+New-Alias -name gL10  Get-Lunar10 -Force 
 New-Alias -name c2L10 ConvertTo-Lunar10 -Force
 
 
-Export-ModuleMember -Function Get-Moon, Get-Lunar10, ConvertTo-Lunar10 -Alias gL10, c2L10
-
+#Export-ModuleMember -Function Get-Moon, Get-Lunar10, ConvertTo-Lunar10 -Alias gL10, c2L10
+Export-ModuleMember -Function Get-Moon, ConvertTo-Lunar10 -Alias c2L10 -Variable $_moons
 
 
 
